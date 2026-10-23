@@ -1,6 +1,6 @@
 # Security gates
 
-1. Make repository private before any sensitive implementation or financial connection.
+1. Public source is permitted; protect secrets, production data, deployment identities and build artifacts. Do not rely on code secrecy.
 2. Verify Fides trust model, identity provider and MFA; fail closed.
 3. Verify Strata/PostgreSQL migration behavior and Arca compatibility.
 4. Implement entity-scoped authorization in database queries and API.
