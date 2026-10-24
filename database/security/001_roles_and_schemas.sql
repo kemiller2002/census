@@ -20,7 +20,7 @@ REVOKE ALL ON ALL TABLES IN SCHEMA census_private FROM PUBLIC, census_api_runtim
 REVOKE ALL ON ALL SEQUENCES IN SCHEMA census_private FROM PUBLIC, census_api_runtime, census_worker_runtime;
 REVOKE ALL ON ALL FUNCTIONS IN SCHEMA census_api, census_private, census_security FROM PUBLIC, census_api_runtime, census_worker_runtime;
 REVOKE ALL ON ALL PROCEDURES IN SCHEMA census_api, census_private, census_security FROM PUBLIC, census_api_runtime, census_worker_runtime;
--- Defaults apply to objects subsequently created by census_owner.
+-- PostgreSQL grants EXECUTE on new functions to PUBLIC by default.\n-- Revoke this globally for objects created by census_owner; a per-schema\n-- REVOKE alone does not cancel a global default grant.\nALTER DEFAULT PRIVILEGES FOR ROLE census_owner REVOKE EXECUTE ON FUNCTIONS FROM PUBLIC;\n-- Defaults apply to objects subsequently created by census_owner.
 ALTER DEFAULT PRIVILEGES FOR ROLE census_owner IN SCHEMA census_private
  REVOKE ALL ON TABLES FROM PUBLIC;
 ALTER DEFAULT PRIVILEGES FOR ROLE census_owner IN SCHEMA census_private
