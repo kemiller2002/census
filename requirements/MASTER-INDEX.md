@@ -15,7 +15,7 @@ Status: requirements baseline drafted; implementation, Praxis ingestion and vali
 - CEN-048..052: requirements/ui-api-operations.md.
 - CEN-053..059: requirements/delivery-operations-traceability.md.
 
-- CEN-060: requirements/function-only-database-access.md, mandatory zero-direct-table-access policy for all application runtimes.\n\n## Priority and dependencies
+- CEN-060: requirements/function-only-database-access.md, mandatory zero-direct-table-access policy for all application runtimes.\n\n- CEN-061: docs/database-function-contracts.md, proposed 48-function PostgreSQL interface catalog; exact auth-context implementation and other decisions remain blocked.\n\n## Priority and dependencies
 P0 security: CEN-010, 014, 030..036, 051, 055. Before financial API exposure: PostgreSQL runtime privilege negative tests, authorization, signed identity, audit and CI/OIDC restrictions.
 P0 accounting: CEN-001..007, 023, 037..040. Before any real financial records: DB-enforced journal constraints and tenant isolation.
 P0 connectivity: CEN-009, 020, 043..047. Before Plaid production: authenticated webhooks, cursor atomicity and privacy controls.
